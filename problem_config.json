@@ -1,0 +1,40 @@
+{
+    "entry_point": "rcpsp_problem:RCPSPProblem",
+    "default_params": {
+      "instance_file": "instances/Pat1.rcp"
+    },
+    "problem_type": "Resource Constrained Project Scheduling Problem",
+    "description": "In the RCPSP, a set of tasks must be scheduled subject to precedence and renewable resource constraints. Each task has a fixed duration and consumes a given amount of each resource while in progress. Resources have limited capacities. The goal is to minimize the makespan (the time when all tasks are completed). This instance follows the Patterson format.",
+    "keywords": [
+      "rcpsp",
+      "scheduling",
+      "project scheduling",
+      "resource constraints",
+      "optimization"
+    ],
+    "data_format": {
+      "instance_file": {
+        "format": "The first line contains two integers: the number of tasks and the number of renewable resources. The second line lists the capacities for each resource. Each subsequent line describes a task with: duration, resource requirements (one per resource), number of successors, and the successor task IDs (1-indexed)."
+      }
+    },
+    "decision_variables": {
+      "start_times": {
+        "type": "list of int",
+        "description": "A list of integers representing the start time for each task."
+      }
+    },
+    "objective": {
+      "type": "minimization",
+      "function": "Makespan = max_i(start_time[i] + duration[i])",
+      "description": "Minimize the overall makespan of the project while satisfying precedence and resource capacity constraints. Infeasible solutions incur a heavy penalty."
+    },
+    "solution_representation": "A list of integers representing the start times of the tasks.",
+    "compatible_optimizers": [
+      "genetic_algorithm",
+      "simulated_annealing",
+      "particle_swarm",
+      "tabu_search",
+      "rl_optimizer"
+    ]
+  }
+  
