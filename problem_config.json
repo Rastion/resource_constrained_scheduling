@@ -3,12 +3,15 @@
     "default_params": {
       "instance_file": "instances/Pat1.rcp"
     },
-    "problem_type": "Resource Constrained Project Scheduling Problem",
+    "creator": "Rastion",
+    "type": "problem",
+    "problem_name": "Resource Constrained Project Scheduling Problem",
     "description": "In the RCPSP, a set of tasks must be scheduled subject to precedence and renewable resource constraints. Each task has a fixed duration and consumes a given amount of each resource while in progress. Resources have limited capacities. The goal is to minimize the makespan (the time when all tasks are completed). This instance follows the Patterson format.",
+    "link_to_dataset": "https://github.com/Rastion/resource_constrained_scheduling/blob/main/instances/Pat1.rcp",
     "keywords": [
       "rcpsp",
       "scheduling",
-      "project scheduling",
+      "production-scheduling",
       "resource constraints",
       "optimization"
     ],
@@ -29,12 +32,8 @@
       "description": "Minimize the overall makespan of the project while satisfying precedence and resource capacity constraints. Infeasible solutions incur a heavy penalty."
     },
     "solution_representation": "A list of integers representing the start times of the tasks.",
-    "compatible_optimizers": [
-      "genetic_algorithm",
-      "simulated_annealing",
-      "particle_swarm",
-      "tabu_search",
-      "rl_optimizer"
+    "formulations": [
+      ""
     ]
   }
   
